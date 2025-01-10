@@ -207,7 +207,7 @@ export function split(text: string, options?: splitOptions): TxtParentNodeWithSe
     const sourceCode = splitParser.source;
     while (!sourceCode.hasEnd) {
         if (newLine.test(sourceCode)) {
-            splitParser.nextLine(newLine);
+            splitParser.close(newLine);
         } else if (space.test(sourceCode)) {
             splitParser.nextSpace(space);
         } else if (separator.test(sourceCode)) {
